@@ -1,4 +1,3 @@
-// PhoneBook/PhoneBook.js
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Container } from 'ui/Container.styled';

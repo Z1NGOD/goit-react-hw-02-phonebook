@@ -1,15 +1,25 @@
-// App.js
 import React, { Component } from 'react';
 import { Container } from 'ui/Container.styled';
 import PhoneBook from './PhoneBook/PhoneBook';
 import Contacts from './Contacts/Contacts';
 import { nanoid } from 'nanoid';
 import Filter from './Filter/Filter';
+import PropTypes from 'prop-types';
 
 export default class App extends Component {
   state = {
     contacts: [],
     filter: '',
+  };
+  static propTypes = {
+    contacts: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        number: PropTypes.string.isRequired,
+      })
+    ),
+    filter: PropTypes.string,
   };
 
   addToContacts = (name, number) => {
