@@ -5,19 +5,20 @@ const Form = styled.form`
   max-width: 400px;
   margin: 0 auto;
 `;
+
 const MainText = styled.h1`
-  font-size: 36px;
+  font-size: 48px;
   color: #333;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 `;
 
 const Input = styled.input`
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
+  padding: 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 18px;
   outline: none;
-margin-bottom: 20px;
+  margin-bottom: 20px;
   ::placeholder {
     color: #999;
   }

@@ -11,7 +11,7 @@ export default function PhoneBook({
   handleChange,
 }) {
   return (
-    <Container>
+    <>
       <Form onSubmit={handleSubmit}>
         <MainText>Phone Book</MainText>
         <Input
@@ -35,10 +35,13 @@ export default function PhoneBook({
         />
         <Btn type="submit">Add contact</Btn>
       </Form>
-    </Container>
+    </>
   );
 }
 
 PhoneBook.propTypes = {
-  addToContacts: PropTypes.func.isRequired,
+  name: PropTypes.string,
+  number: PropTypes.string,
+  handleSubmit: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
 };

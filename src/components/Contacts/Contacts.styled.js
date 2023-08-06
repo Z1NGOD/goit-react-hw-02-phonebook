@@ -4,15 +4,20 @@ const ContactsList = styled.ul`
   padding: 0;
   margin-top: 24px;
 `;
+
 const ContactItem = styled.li`
-  padding: 10px;
-  border: 1px solid #ccc;
-  margin-bottom: 5px;
-  border-radius: 5px;
+  padding: 16px;
+  border-radius: 10px;
   background-color: #f9f9f9;
   display: flex;
   align-items: center;
-  gap:14px;
+  gap: 14px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
 `;
+
 
 export { ContactsList, ContactItem}
