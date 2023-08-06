@@ -41,8 +41,8 @@ export default class PhoneBook extends React.Component {
           <Input
             type="tel"
             name="number"
-            pattern="\+?\d{1,4}[-.\s]?\(?\d{1,3}\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+            pattern="[0-9]{3} [0-9]{3} [0-9]{4}"
+            title="Phone number must be digits and can contain spaces, dashes, parentheses, and can start with +"
             required
             value={number}
             onChange={this.handleChange}
