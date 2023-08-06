@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Container } from 'ui/Container.styled';
 import { Btn } from 'ui/Btn.styled';
 import { MainText, Input, Form } from './Phonebook.styled';
 
