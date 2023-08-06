@@ -24,11 +24,10 @@ export default class App extends Component {
 
   addToContacts = (name, number) => {
     const { contacts } = this.state;
-    if (name.trim() === '' || number.trim() === '') {
-      alert('Please provide both name and number.');
+    if (!name || !number) {
+      alert('Please enter a name and a number by hand dont use autocomplete.');
       return;
-    }
-
+    } 
     if (
       contacts.some(
         contact => contact.name.toLowerCase() === name.toLowerCase()
@@ -49,12 +48,9 @@ export default class App extends Component {
     }));
   };
 
-  handleNameChange = e => {
-    this.setState({ name: e.target.value });
-  };
-
-  handleNumberChange = e => {
-    this.setState({ number: e.target.value });
+  handleChange = e => {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
   };
 
   onChange = ({ target }) => {
@@ -73,6 +69,14 @@ export default class App extends Component {
       contacts: prevState.contacts.filter(contact => contact.id !== id),
     }));
   };
+  handleSubmit = e => {
+    e.preventDefault();
+    const { name, number } = this.state;
+    this.addToContacts(name, number);
+    this.setState({ name: '', number: '' });
+    e.target.reset();
+  };
+
   render() {
     const { name, number, filter } = this.state;
     return (
@@ -80,9 +84,8 @@ export default class App extends Component {
         <PhoneBook
           name={name}
           number={number}
-          handleNameChange={this.handleNameChange}
-          handleNumberChange={this.handleNumberChange}
-          addToContacts={this.addToContacts}
+          handleSubmit={this.handleSubmit}
+          handleChange={this.handleChange}
         />
         <Filter filter={filter} onChange={this.onChange} />
         <Contacts
