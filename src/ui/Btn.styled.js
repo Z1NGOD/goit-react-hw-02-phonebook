@@ -11,7 +11,7 @@ const Btn = styled.button`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
   &:hover {
-    background-color: #0056b3;
+    background-color: purple;
   }
 
   &:focus {
